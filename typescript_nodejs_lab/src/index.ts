@@ -32,7 +32,7 @@ alumno = {
   estado: true
 };
 
-console.log('alumno:', alumno)
+// console.log('alumno:', alumno)
 
 let alumnos: Array<Persona> = [];
 
@@ -40,6 +40,36 @@ alumnos.push(alumno);
 alumnos.push({ nombres: 'jorge', apellido: 'chavez', edad: 30, estado: true });
 alumnos.push({ nombres: 'abel', apellido: 'lopez', edad: 27, estado: true });
 
-alumnos.forEach(a => {
-  console.log('alumno:', a)
-})
+// alumnos.forEach(a => {
+//   console.log('alumno:', a)
+// })
+
+import Empleado from './Empleado';
+
+let empleado = new Empleado(1, 'Ana Gomez');
+// console.log('---[ clases ]---');
+// console.log(`Empleado : ${empleado.nombres} ${empleado.getSalario()}`);
+
+import Alumno from './alumno';
+
+// console.log('---[ clases herencia ]---');
+let alum = new Alumno(22222, 123, 'Jose Vargas');
+
+// alum.verRegistro();
+
+import Curso from './curso';
+
+// console.log('---[ clases public, private ]---');
+let curso = new Curso();
+
+curso.codigo = 123;
+curso.nombre = 'Jorge Chavez';
+
+// console.log(curso.info());
+
+console.log('---[ clases static ]---');
+
+import Util from './util';
+
+console.log(Util.fechaActual());
+console.log(Util.monedaNacional);
