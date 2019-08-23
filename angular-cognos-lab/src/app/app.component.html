@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" routerLink="/">
     <img src="assets/images/logocognos.png" alt="">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -10,30 +10,45 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/">Inicio
+          <!-- <span class="sr-only">(current)</span> -->
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Usuarios</a>
+        <a class="nav-link" routerLink="/">Usuarios</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="cursor: pointer">
           Componentes
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/interpolacion">Interpolación</a>
-          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" routerLink="/interpolacion">Interpolación&nbsp;<i class="fas fa-check"></i></a>
+          <a class="dropdown-item" routerLink="/directivas">Directivas&nbsp;<i class="fas fa-times"></i></a>
+          <a class="dropdown-item" routerLink="/eventos">Eventos&nbsp;<i class="fas fa-check"></i></a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" routerLink="/comp-parametros">Componentes parámetros&nbsp;<i
+              class="fas fa-times"></i></a>
+          <a class="dropdown-item" routerLink="/comp-eventos">Componentes eventos&nbsp;<i class="fas fa-times"></i></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/">Módulos&nbsp;<i class="fas fa-times"></i></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/">Consumo de Servicios&nbsp;<i class="fas fa-times"></i></a>
+          <a class="dropdown-item" routerLink="/">Rutas&nbsp;<i class="fas fa-times"></i></a>
+          <a class="dropdown-item" routerLink="/">Servicios&nbsp;<i class="fas fa-times"></i></a>
+          <a class="dropdown-item" routerLink="/">Pipes&nbsp;<i class="fas fa-times"></i></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" routerLink="/">Formularios Tamplate-driven&nbsp;<i class="fas fa-times"></i></a>
+          <a class="dropdown-item" routerLink="/">Reactive Forms&nbsp;<i class="fas fa-times"></i></a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Servicios</a>
+        <a class="nav-link disabled" routerLink="/" tabindex="-1" aria-disabled="true">Servicios</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
   </div>
 </nav>

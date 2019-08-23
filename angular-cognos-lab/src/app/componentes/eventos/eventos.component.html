@@ -1,1 +1,18 @@
-<p>eventos works!</p>
+<div class="mt-2">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Inicio</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Eventos</li>
+    </ol>
+  </nav>
+</div>
+<div class="card mt-2">
+  <div class="card-body text-center">
+    <h1>{{numero}}</h1>
+  </div>
+  <div class="card-footer text-muted">
+    <button class="btn btn-primary" (click)="generarAleatorio()">Generar Aleatorio</button>
+    <button class="btn btn-secondary ml-2" (click)="incrementar()">Incrementar</button>
+    <button class="btn btn-info ml-2" (click)="decrementar()">Decrementar</button>
+  </div>
+</div>

@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent implements OnInit {
 
+  numero: number = 0;
+  rutaImagen: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  generarAleatorio() {
+    this.numero = Math.trunc(Math.random() * 10) + 1;
+  }
+
+  incrementar() {
+    this.numero++;
+  }
+
+  decrementar() {
+    this.numero--;
   }
 
 }
