@@ -1,0 +1,36 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">
+    <img src="assets/logocognos.png" alt="">
+  </span>
+</nav>
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-header">
+          ngx-toastr sweetalert2 font-awesome
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <button class="btn btn-primary btn-block" (click)="showSuccess()">Angular notificacion con
+              exito</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-success btn-block" (click)="showError()">Angular notificacion con
+              error</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-secondary btn-block" (click)="showExito()">Show exito</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-info btn-block" (click)="showPregunta()">Confirmar</button>
+          </li>
+          <li class="list-group-item">
+            <button class="btn btn-warning btn-block" (click)="showProcesando()">Cargardo proceso</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
