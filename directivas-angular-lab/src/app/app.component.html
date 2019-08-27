@@ -1,0 +1,43 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">
+    <img src="assets/logocognos.png" alt="">
+  </span>
+</nav>
+
+<div class="container">
+  <div class="row mt-2">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="home"
+                aria-selected="true">Directivas de componentes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="profile"
+                aria-selected="false">Directivas estructurales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tab3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="contact"
+                aria-selected="false">Directivas de atributos</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+              <div class="p-4">
+                <p appRealce>Texto con realce</p>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+              <app-editar-alumnos></app-editar-alumnos>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+              <app-listar-alumnos></app-listar-alumnos>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

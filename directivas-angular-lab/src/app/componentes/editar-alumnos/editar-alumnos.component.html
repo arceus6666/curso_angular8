@@ -1,0 +1,53 @@
+<div class="row mt-2">
+  <div class="col-12">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">CI</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Curso</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos; let i = index;">
+          <td>{{ alumno.ci }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>
+            <div *ngIf="!editar || selected !== i;else divApellido">
+              {{ alumno.apellido }}
+            </div>
+            <ng-template #divApellido>
+              <input type="text" class="form-control form-control-sm" [value]="alumno.apellido"
+                [(ngModel)]="memo.apellido">
+            </ng-template>
+          </td>
+          <td>
+            <div *ngIf="!editar || selected !== i;else divCurso">
+              {{ alumno.curso }}
+            </div>
+            <ng-template #divCurso>
+              <select [value]="alumno.curso" name="uso_garantia" class="form-control" [(ngModel)]="alumno.curso">
+                <option *ngFor="let curso of cursos; let c = index">
+                  {{ curso }}
+                </option>
+              </select>
+            </ng-template>
+          </td>
+          <td>
+            <div *ngIf="!editar || selected !== i; else elseedit">
+              <button class="btn btn btn-light" (click)="edit(i);"><i class="fas fa-edit"></i></button>
+              <button class="btn btn btn-danger" (click)="edit(i);"><i class="fas fa-trash"></i></button>
+            </div>
+            <ng-template #elseedit>
+              <button class="btn btn btn-success" (click)="guardar(i)"><i class="fas fa-save"></i></button>
+              <button class="btn btn btn-info" (click)="editar=false"><i class="fas fa-ban"></i></button>
+            </ng-template>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row mt-2">
+  <div class="col-12">
+    <form class="form-inline md-form form-sm">
+      <i class="fas fa-search" (click)="search(datas.value)" style="cursor: pointer;"></i>
+      <input #datas class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+    </form>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-12">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">CI</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Curso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos" [ngClass]="{
+    'table-danger': alumno.curso === 'Angular',
+    'table-success': alumno.curso === 'Nodejs',
+    'table-info': alumno.curso === 'ReactJs',
+    'table-secondary': alumno.curso === 'Flutter' }">
+          <td>{{ alumno.ci }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.apellido }}</td>
+          <td>
+            <p [ngStyle]="{'color':alumno.curso === 'Angular' ? 'blue' : 'black' }">
+              {{ alumno.curso }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
