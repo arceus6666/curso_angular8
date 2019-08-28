@@ -1,0 +1,19 @@
+<div class="row mt-2">
+  <div class="col-12">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Curso</th>
+          <th scope="col"><i class="fas fa-sync" style="cursor: pointer" (click)="cargarCursos()"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let curso of cursos">
+          <td>{{ curso.id }}</td>
+          <td colspan="2">{{ curso.nombre_curso }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
