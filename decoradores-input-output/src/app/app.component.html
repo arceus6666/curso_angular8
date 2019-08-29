@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>Contador</h1>
+      <h2>{{ contador }}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-primary" (click)="incrementar()"><i class="fas fa-plus"></i></button>
+      <button class="btn btn-secondary ml-1" (click)="decrementar()"><i class="fas fa-minus"></i></button>
+    </div>
+  </div>
+  <app-hijo [contador]="contador" (cambioContador)="contador=$event"></app-hijo>
+
+</div>
+<router-outlet></router-outlet>
