@@ -5,7 +5,7 @@ import helmet from 'helmet';
 import compression from 'compression';
 import cors from 'cors';
 // import routes
-import usuarioRutas from './routes/usuario';
+import usuarioRutas from './routes/alumno';
 // Server Class
 class Server {
 

@@ -10,7 +10,7 @@ var helmet_1 = __importDefault(require("helmet"));
 var compression_1 = __importDefault(require("compression"));
 var cors_1 = __importDefault(require("cors"));
 // import routes
-var usuario_1 = __importDefault(require("./routes/usuario"));
+var alumno_1 = __importDefault(require("./routes/alumno"));
 // Server Class
 var Server = /** @class */ (function () {
     function Server() {
@@ -37,7 +37,7 @@ var Server = /** @class */ (function () {
     };
     Server.prototype.routes = function () {
         var router = express_1.default.Router();
-        this.app.use('/api-cognos/usuarios', usuario_1.default);
+        this.app.use('/api-cognos/usuarios', alumno_1.default);
     };
     Server.prototype.start = function () {
         var _this = this;
