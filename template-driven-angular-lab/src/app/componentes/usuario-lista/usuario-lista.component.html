@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col">
+    <span *ngIf="esInfo;then info else lista"></span>
+    <ng-template #lista>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nombre usuario</th>
+            <th scope="col">Email</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <th scope="row">{{usuario.id}}</th>
+            <td>{{usuario.name}}</td>
+            <td>{{usuario.username}}</td>
+            <td>{{usuario.email}}</td>
+            <td>
+              <button class="btn btn-secondary" (click)="verInfo(usuario)">
+                <i class="far fa-address-book"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-template>
+    <ng-template #info>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">{{ usuario.name }}</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ usuario.address.street }}</li>
+          <li class="list-group-item">{{ usuario.address.suite }}</li>
+          <li class="list-group-item">{{ usuario.address.city }}</li>
+        </ul>
+        <div class="card-footer text-muted">
+          <a href="#" class="btn btn-primary" (click)="esInfo=false">Usuarios</a>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>
