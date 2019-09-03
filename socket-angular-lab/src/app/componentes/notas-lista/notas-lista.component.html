@@ -1,0 +1,9 @@
+<ul class="list-group">
+  <li class="list-group-item">
+    <button class="btn btn-link" (click)="nuevaNota()">Nueva Nota</button>
+  </li>
+  <li class="list-group-item" [ngClass]="{'active': docId === idActual}" (click)="cargarNota(docId)"
+    *ngFor="let docId of notas | async" style="cursor: pointer" title="edit">
+    {{ docId }}
+  </li>
+</ul>
