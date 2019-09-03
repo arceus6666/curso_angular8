@@ -1,0 +1,27 @@
+<div class="card mt-2">
+  <div class="card-header">
+    <h5>Alumno</h5>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" name="nombres" [(ngModel)]='alumno.nombres' placeholder="Nombres">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="apellidos" [(ngModel)]='alumno.apellidos' placeholder="Apellidos">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" name="doc_identidad" [(ngModel)]='alumno.doc_identidad'
+          placeholder="Doc.Identidad">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" (click)="registrar()" *ngIf="esNuevo">
+          <i class="fas fa-user-plus"></i> Crear
+        </button>
+        <button class="btn btn-success btn-block" (click)="guardar()" *ngIf="!esNuevo">
+          <i class="fas fa-user-edit"></i> Modificar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

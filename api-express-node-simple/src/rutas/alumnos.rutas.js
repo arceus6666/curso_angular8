@@ -1,7 +1,9 @@
 const { Router } = require('express');
 const router = new Router();
 const alumnos = require('../data/alumnos.json');
-let currentId = alumnos[alumnos.length - 1] + 1;
+let currentId = alumnos[alumnos.length - 1].id;
+
+// console.log('id',currentId)
 
 router.get('/', (req, res) => {
   // res.json({ estado: 'OK', mensaje: '', datos: alumnos });
@@ -31,10 +33,14 @@ router.post('/', (req, res) => {
   const { nombres, apellidos, doc_identidad } = req.body;
   const alumno = alumnos.find(alumno => alumno.doc_identidad === doc_identidad);
 
-  if (alumno) return res.json({ estado: 'ERROR', mensaje: 'registro ya existe', datos: [] });
+  if (alumno) {
+    currentId--;
+    return res.json({ estado: 'ERROR', mensaje: 'registro ya existe', datos: [] });
+  }
 
-  alumnos.push({ currentId, nombres, apellidos, doc_identidad });
-  res.json({ estado: 'OK', mensaje: 'se inserto registro con exito', datos: [{ nombres, apellidos, doc_identidad }] });
+  alumnos.push({ id: currentId, nombres, apellidos, doc_identidad });
+  // res.json({ estado: 'OK', mensaje: 'se inserto registro con exito', datos: [{ nombres, apellidos, doc_identidad }] });
+  res.json({ id: currentId, nombres, apellidos, doc_identidad });
 
 });
 
@@ -47,7 +53,7 @@ router.put('/:id', (req, res) => {
   if (index === -1) return res.json({ estado: 'ERROR', mensaje: 'registro no encontrado', datos: [] });
 
   alumnos[index] = { id, nombres, apellidos, doc_identidad };
-  res.json({ estado: 'OK', mensaje: 'registro se actualizo con exito', datos: [{ nombres, apellidos, doc_identidad }] });
+  res.json({ id, nombres, apellidos, doc_identidad });
 
 });
 

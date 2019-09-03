@@ -1,0 +1,25 @@
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">
+    <img src="assets/image/logocognos.png" alt="">
+  </span>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <app-alumno-frm [alumno]="alumno" [esNuevo]="esNuevo" (crearAlumno)="registrarAlumno($event)"
+        (guardarAlumno)="guardarAlumno($event)"></app-alumno-frm>
+    </div>
+    <div class="col-8">
+      <app-alumno-tbl [alumnos]="alumnos" (editarAlumno)="modificarAlumno($event)"
+        (eliminarAlumno)="eliminarAlumno($event)"></app-alumno-tbl>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-secondary mt-2" role="alert">
+        {{ responde.message }}
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
